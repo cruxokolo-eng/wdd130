@@ -1,14 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
-header, footer {
+header,
+footer {
     background-color: #333;
     color: #fff;
     padding: 10px;
@@ -16,27 +17,27 @@ header, footer {
     font-size: 1.5rem;
 }
 
-main{
+main {
     width: 400px;
     margin: 0 auto;
 }
 
-h1{
+h1 {
     margin: 10px;
     text-align: center;
 }
 
-h2{
+h2 {
     border-bottom: 1px solid #222;
 }
 
-img{
+img {
     width: 100%;
     height: auto;
     box-shadow: 0 0 30px #333;
 }
 
-section{
+section {
     margin: 20px 0;
     border: 1px solid rgb(0, 0, 0, 10%);
     padding: 10px;
@@ -44,14 +45,14 @@ section{
     font-size: .9rem;
 }
 
-section p{
+section p {
     margin: 10px;
 }
 
-ul{
+ul {
     margin: 10px 20px;
 }
 
-footer{
+footer {
     font-size: .9rem;
 }
