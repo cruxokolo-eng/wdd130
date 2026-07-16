@@ -53,6 +53,10 @@ nav a {
     font-weight: bold;
 }
 
+nav a:hover {
+    color: var(--secondary-color);
+}
+
 h1,
 h2 {
     font-family: var(--heading-font);
@@ -64,6 +68,12 @@ section,
 article {
     margin: 16px;
     padding: 8px;
+}
+
+section {
+    background-color: var(--accent2-color);
+    border: 1px solid var(--accent1-color);
+    border-radius: 6px;
 }
 
 .socialmedia a {
@@ -117,4 +127,5 @@ footer {
     align-items: center;
     padding: 1rem 0 2rem;
     color: var(--primary-color);
+    background-color: var(--dark-color);
 }
