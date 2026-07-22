@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,7 @@
             padding: 40px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
@@ -66,37 +67,61 @@
         }
     </style>
 </head>
+
 <body>
 
-<div class="card">
-    <h1>❤️ Will You Be My Girlfriend? ❤️</h1>
-    <p>You make my days brighter, and I'd love to spend more time with you. You can't say no. lol</p>
+    <div class="card">
+        <h1>❤️ Will You Be My Girlfriend? ❤️</h1>
+        <p>You make my days brighter, and I'd love to spend more time with you. You can't say no. lol</p>
 
-    <button id="yesBtn">Yes 💖</button>
-    <button id="noBtn">No 😢</button>
+        <button id="yesBtn">Yes 💖</button>
+        <button id="noBtn">No 😢</button>
 
-    <div id="message"></div>
-</div>
+        <div id="message"></div>
+    </div>
 
-<script>
-    const yesBtn = document.getElementById("yesBtn");
-    const noBtn = document.getElementById("noBtn");
-    const message = document.getElementById("message");
+    <script>
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+        const message = document.getElementById("message");
 
-    yesBtn.addEventListener("click", () => {
-        message.innerHTML = "🎉 Yay! I can't wait! ❤️";
-    });
+        const moveNoButton = () => {
+            const x = Math.random() * 300 - 150;
+            const y = Math.random() * 300 - 150;
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        };
 
-    noBtn.addEventListener("mouseover", () => {
-        const x = Math.random() * 300 - 150;
-        const y = Math.random() * 300 - 150;
-        noBtn.style.transform = `translate(${x}px, ${y}px)`;
-    });
+        yesBtn.addEventListener("click", () => {
+            message.innerHTML = "🎉 Yay! I can't wait! ❤️";
+        });
 
-    noBtn.addEventListener("click", () => {
-        message.innerHTML = "😊 Thanks for being honest. I wish you all the best!";
-    });
-</script>
+        noBtn.addEventListener("mouseover", moveNoButton);
+
+        noBtn.addEventListener("touchstart", (event) => {
+            event.preventDefault();
+            moveNoButton();
+        }, { passive: false });
+
+        noBtn.addEventListener("pointerdown", (event) => {
+            if (event.pointerType === "touch") {
+                event.preventDefault();
+                moveNoButton();
+            }
+        });
+
+        noBtn.addEventListener("click", (event) => {
+            if (window.matchMedia("(pointer: coarse)").matches) {
+                event.preventDefault();
+                event.stopPropagation();
+                moveNoButton();
+                message.innerHTML = "😅 Nice try!";
+                return;
+            }
+
+            message.innerHTML = "😊 Thanks for being honest. I wish you all the best!";
+        });
+    </script>
 
 </body>
+
 </html>
