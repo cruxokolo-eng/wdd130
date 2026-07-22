@@ -57,6 +57,9 @@
             background: #f44336;
             color: white;
             position: relative;
+            opacity: 0.85;
+            touch-action: none;
+            cursor: not-allowed;
         }
 
         #message {
@@ -84,11 +87,10 @@
         const yesBtn = document.getElementById("yesBtn");
         const noBtn = document.getElementById("noBtn");
         const message = document.getElementById("message");
-        let touchTap = false;
 
         const moveNoButton = () => {
-            const x = Math.random() * 300 - 150;
-            const y = Math.random() * 300 - 150;
+            const x = Math.random() * 220 - 110;
+            const y = Math.random() * 120 - 60;
             noBtn.style.transform = `translate(${x}px, ${y}px)`;
         };
 
@@ -97,32 +99,19 @@
         });
 
         noBtn.addEventListener("mouseover", moveNoButton);
-
+        noBtn.addEventListener("mouseenter", moveNoButton);
         noBtn.addEventListener("touchstart", (event) => {
-            touchTap = true;
             event.preventDefault();
             moveNoButton();
         }, { passive: false });
-
         noBtn.addEventListener("pointerdown", (event) => {
-            if (event.pointerType === "touch") {
-                touchTap = true;
-                event.preventDefault();
-                moveNoButton();
-            }
+            event.preventDefault();
+            moveNoButton();
         });
-
         noBtn.addEventListener("click", (event) => {
-            if (touchTap || window.matchMedia("(pointer: coarse)").matches) {
-                event.preventDefault();
-                event.stopPropagation();
-                touchTap = false;
-                moveNoButton();
-                message.innerHTML = "😅 Nice try!";
-                return;
-            }
-
-            message.innerHTML = "😊 Thanks for being honest. I wish you all the best!";
+            event.preventDefault();
+            event.stopPropagation();
+            moveNoButton();
         });
     </script>
 
