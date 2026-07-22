@@ -84,6 +84,7 @@
         const yesBtn = document.getElementById("yesBtn");
         const noBtn = document.getElementById("noBtn");
         const message = document.getElementById("message");
+        let touchTap = false;
 
         const moveNoButton = () => {
             const x = Math.random() * 300 - 150;
@@ -98,21 +99,24 @@
         noBtn.addEventListener("mouseover", moveNoButton);
 
         noBtn.addEventListener("touchstart", (event) => {
+            touchTap = true;
             event.preventDefault();
             moveNoButton();
         }, { passive: false });
 
         noBtn.addEventListener("pointerdown", (event) => {
             if (event.pointerType === "touch") {
+                touchTap = true;
                 event.preventDefault();
                 moveNoButton();
             }
         });
 
         noBtn.addEventListener("click", (event) => {
-            if (window.matchMedia("(pointer: coarse)").matches) {
+            if (touchTap || window.matchMedia("(pointer: coarse)").matches) {
                 event.preventDefault();
                 event.stopPropagation();
+                touchTap = false;
                 moveNoButton();
                 message.innerHTML = "😅 Nice try!";
                 return;
