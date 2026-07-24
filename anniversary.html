@@ -1,0 +1,191 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Seven Months, My Love ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(#DDA0DD);
+    color:white;
+    overflow-x:hidden;
+}
+
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:40px;
+    max-width:800px;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+h2{
+    margin-bottom:20px;
+    font-weight:400;
+}
+
+p{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+.highlight{
+    color:#fff8a6;
+    font-weight:bold;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+    background:white;
+    color:#ff4f81;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+#surprise{
+    display:none;
+    margin-top:30px;
+    font-size:1.3rem;
+    animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.heart{
+    position:fixed;
+    top:-20px;
+    color:#fff;
+    animation:fall linear infinite;
+    opacity:.8;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+.footer{
+    margin-top:30px;
+    font-style:italic;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>❤️ Happy Seven Months, My Love ❤️</h1>
+
+<h2>Celebrating us on the <span class="highlight">25th</span></h2>
+
+<p>
+Seven months ago, our story began, and every day since then has
+become another beautiful memory that I'll always cherish.
+</p>
+
+<p>
+Thank you for your love, your kindness, your patience,
+and for making my life brighter just by being in it.
+</p>
+
+<p>
+Every laugh we've shared, every conversation we've had,
+and every moment we've spent together reminds me how lucky I am to have you.
+</p>
+
+<p>
+Here's to seven amazing months and to many more beautiful adventures,
+memories, smiles, and dreams together. ❤️
+</p>
+
+<button onclick="showMessage()">Click for a Surprise 🎁</button>
+
+<div id="surprise">
+<h2>💖 I Love You 💖</h2>
+
+<p>
+Happy Seven Month Anniversary, Baby.
+No matter what the future holds,
+I hope we continue creating wonderful memories together.
+Thank you for choosing me Elizabeth.
+</p>
+
+<h3>Forever grateful for you ❤️</h3>
+</div>
+
+<div class="footer">
+Made with love ❤️ .
+</div>
+
+</div>
+
+</div>
+
+<script>
+function showMessage(){
+    document.getElementById("surprise").style.display="block";
+}
+
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(15+Math.random()*35)+"px";
+    heart.style.animationDuration=(3+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
+```
