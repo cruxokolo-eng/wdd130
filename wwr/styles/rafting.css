@@ -30,31 +30,49 @@ footer {
     margin: 0 auto;
 }
 
-header {
-    display: flex;
+.site-header {
+    display: grid;
+    grid-template-columns: 140px 1fr 1.3fr;
     align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
     padding: 1rem 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent1-color));
+    color: #fff;
+    border-radius: 0 0 10px 10px;
 }
 
-header img {
+.site-header img {
     width: 120px;
+    margin-left: 1rem;
 }
 
-nav ul {
+.site-title {
+    font-family: var(--heading-font);
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+}
+
+.site-nav ul {
     display: flex;
+    justify-content: flex-end;
     list-style: none;
     gap: 1rem;
+    padding-right: 1rem;
 }
 
-nav a {
-    color: var(--primary-color);
+.site-nav li {
+    flex: 1 1 auto;
+}
+
+.site-nav a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover {
-    color: var(--secondary-color);
+.site-nav a:hover {
+    color: var(--accent2-color);
 }
 
 h1,
@@ -76,8 +94,67 @@ section {
     border-radius: 6px;
 }
 
+.history-section,
+.adventures-section {
+    margin-top: 1.5rem;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.history-grid p {
+    margin: 0;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 6px;
+}
+
+.adventure-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.85rem;
+    align-items: stretch;
+}
+
+.adventure-grid figure {
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0.5rem;
+}
+
+.adventure-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.adventure-grid figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding-top: 0.4rem;
+    color: var(--accent1-color);
+}
+
+.socialmedia {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 .socialmedia a {
     text-decoration: none;
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
 }
 
 .hero {
@@ -128,4 +205,6 @@ footer {
     padding: 1rem 0 2rem;
     color: var(--primary-color);
     background-color: var(--dark-color);
+    border-radius: 10px 10px 0 0;
+    margin-top: 1.5rem;
 }
