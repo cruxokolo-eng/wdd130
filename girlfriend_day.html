@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Girlfriend's Day ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 0;
+            background: linear-gradient(-45deg, #ff4e8a, #ff9eb5, #ffccd5, #ff6b81);
+            background-size: 400% 400%;
+            animation: bg 10s ease infinite;
+            overflow-x: hidden;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        @keyframes bg {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, .18);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            background: white;
+            color: #ff2d6f;
+            font-size: 18px;
+            cursor: pointer;
+            transition: none;
+            animation: none !important;
+            transform: none !important;
+            -webkit-transform: none !important;
+            will-change: auto;
+        }
+
+        button:hover,
+        button:focus,
+        button:active {
+            background: white;
+            color: #ff2d6f;
+            transform: none !important;
+            box-shadow: none;
+            outline: none;
+        }
+
+        #message {
+            display: none;
+            margin-top: 30px;
+            font-size: 1.3rem;
+            line-height: 1.7;
+            animation: fade 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            color: #fff;
+            animation: float 8s linear infinite;
+            opacity: .8;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) scale(1);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-10vh) scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>💖 Happy Girlfriend's Day 💖</h1>
+
+        <p>
+            To the most amazing girl in my life,<br><br>
+
+            Happy Girlfriend's Day, My Flower! ❤️<br><br>
+
+            Every moment with you is a beautiful blessing. Your smile brightens my darkest days, your laughter fills my
+            heart with joy, and your love gives my life meaning.
+
+            Thank you for standing by me, believing in me, and loving me just the way I am. I cherish every memory we've
+            created together, and I look forward to making countless more with you.
+
+            I love you today, tomorrow, and forever. 💕
+        </p>
+
+        <button onclick="showMessage()">
+            Click Here ❤️
+        </button>
+        <div id="message">
+            💝 Happy Girlfriend's Day, my beautiful Queen. I love you endlessly. ❤️🥰💍
+        </div>
+
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+        }
+
+        // Floating hearts
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (20 + Math.random() * 30) + "px";
+            heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+
+</html>
