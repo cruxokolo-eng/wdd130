@@ -19,25 +19,9 @@
             justify-content: center;
             align-items: center;
             padding: 30px 0;
-            background: linear-gradient(-45deg, #ff4e8a, #ff9eb5, #ffccd5, #ff6b81);
-            background-size: 400% 400%;
-            animation: bg 10s ease infinite;
+            background: linear-gradient(135deg, #ff4e8a, #ff9eb5, #ffccd5, #ff6b81);
             overflow-x: hidden;
             font-family: 'Segoe UI', sans-serif;
-        }
-
-        @keyframes bg {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
         }
 
         .container {
@@ -111,20 +95,7 @@
         .heart {
             position: absolute;
             color: #fff;
-            animation: float 8s linear infinite;
             opacity: .8;
-        }
-
-        @keyframes float {
-            from {
-                transform: translateY(100vh) scale(1);
-                opacity: 1;
-            }
-
-            to {
-                transform: translateY(-10vh) scale(2);
-                opacity: 0;
-            }
         }
     </style>
 </head>
@@ -152,6 +123,7 @@
         <button onclick="showMessage()">
             Click Here ❤️
         </button>
+
         <div id="message">
             💝 Happy Girlfriend's Day, my beautiful Queen. I love you endlessly. ❤️🥰💍
         </div>
@@ -162,23 +134,6 @@
         function showMessage() {
             document.getElementById("message").style.display = "block";
         }
-
-        // Floating hearts
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.className = "heart";
-            heart.innerHTML = "❤";
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.fontSize = (20 + Math.random() * 30) + "px";
-            heart.style.animationDuration = (5 + Math.random() * 5) + "s";
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 10000);
-        }
-
-        setInterval(createHeart, 300);
     </script>
 
 </body>
