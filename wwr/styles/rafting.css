@@ -319,3 +319,106 @@ button {
 button:hover {
     background-color: var(--secondary-color);
 }
+
+.home-hero {
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.home-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.hero-message {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    background-color: rgba(38, 70, 83, 0.85);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.home-cta,
+.newsletter-section,
+.trips-intro,
+.trip-table-section {
+    margin-top: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.45);
+    border: 1px solid var(--accent1-color);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.cta-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.cta-link:hover {
+    background-color: var(--secondary-color);
+}
+
+.home-grid,
+.trip-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.home-card,
+.trip-card {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--accent1-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.home-card img,
+.trip-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.home-card div,
+.trip-card h2,
+.trip-card p {
+    padding: 0.8rem;
+}
+
+.newsletter-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: end;
+}
+
+.trip-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.trip-table th,
+.trip-table td {
+    border: 1px solid var(--accent1-color);
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.trip-table th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
